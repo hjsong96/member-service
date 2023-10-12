@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+    <select id="findAll" resultType="member.Member">
+        select *
+        from TB_MEMBER
+    </select>
+
+    <select id="findById" resultType="member.Member">
+        select *
+        from TB_MEMBER
+        where id = #{id}
+    </select>
+
+    <select id="findByName" resultType="member.Member">
+        select *
+        from TB_MEMBER
+        where name = #{name}
+    </select>
+
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into TB_MEMBER (name, age)
+        values (#{name}, #{age})
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+
+    <update id="update">
+        update TB_MEMBER
+        set name = #{name}
+          , age = #{age}
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="long">
+        delete from TB_MEMBER
+        where id = #{id}
+    </delete>
+
+    <delete id="clear">
+        delete from TB_MEMBER
+    </delete>
+
+</mapper>

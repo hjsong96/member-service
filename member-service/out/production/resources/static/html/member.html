@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style> .container {
+        max-width: 560px;
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>회원 상세</h2>
+    </div>
+    <div>
+        <label for="id">회원 ID</label>
+        <input type="text" id="id" name="id" class="form-control"
+               value="1" readonly>
+    </div>
+    <div>
+        <label for="name">회원명</label>
+        <input type="text" id="name" name="name" class="form-control"
+               value="회원A" readonly>
+    </div>
+    <div>
+        <label for="age">나이</label>
+        <input type="text" id="age" name="age" class="form-control"
+               value="10000" readonly>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    onclick="location.href='editForm.html'" type="button">회원 수정</button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+                    onclick="location.href='members.html'" type="button">목록으로</button>
+        </div>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
